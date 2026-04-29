@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NKDJ Accounting helps growing businesses, founders, and families stay tax-ready with bookkeeping, payroll, tax preparation, and advisory support.">
+  <title>NKDJ Accounting | Tax, Bookkeeping &amp; Growth Advisory</title>
+  <style>
+    :root {
+      --ink: #14213d;
+      --ink-2: #243b53;
+      --paper: #fffdf8;
+      --mist: #f3f7f1;
+      --line: #d9e2dc;
+      --green: #2f6f4e;
+      --green-dark: #1f4f39;
+      --blue: #2f5d8c;
+      --sky: #dcebf5;
+      --sun: #f2b84b;
+      --coral: #d96b5f;
+      --text: #28323c;
+      --muted: #63707c;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(20, 33, 61, 0.12);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -48px;
+      z-index: 20;
+      background: var(--ink);
+      color: var(--white);
+      padding: 10px 14px;
+      border-radius: 6px;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 253, 248, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(217, 226, 220, 0.8);
+    }
+
+    .nav {
+      max-width: 1180px;
+      min-height: 76px;
+      margin: 0 auto;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--ink);
+      min-width: 230px;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+    }
+
+    .brand-name {
+      display: block;
+      font-size: 1rem;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .brand-note {
+      display: block;
+      margin-top: 4px;
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-2);
+      font-size: 0.93rem;
+      font-weight: 650;
+      padding: 10px 12px;
+      border-radius: 6px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: var(--mist);
+      outline: none;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .phone-link {
+      color: var(--green-dark);
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      background: var(--green);
+      color: var(--white);
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 12px 26px rgba(47, 111, 78, 0.18);
+      transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+      font: inherit;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+      outline: none;
+      box-shadow: 0 16px 32px rgba(47, 111, 78, 0.24);
+    }
+
+    .button.secondary {
+      background: var(--white);
+      color: var(--ink);
+      border-color: var(--line);
+      box-shadow: none;
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus-visible {
+      background: var(--mist);
+    }
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(255, 253, 248, 0.96) 0%, rgba(255, 253, 248, 0.84) 48%, rgba(255, 253, 248, 0.18) 76%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1050' viewBox='0 0 1600 1050'%3E%3Crect width='1600' height='1050' fill='%23dcebf5'/%3E%3Crect x='960' y='0' width='640' height='1050' fill='%232f5d8c'/%3E%3Crect x='1070' y='150' width='380' height='620' rx='18' fill='%23fffdf8' opacity='.95'/%3E%3Crect x='1120' y='215' width='280' height='16' rx='8' fill='%2314213d' opacity='.22'/%3E%3Crect x='1120' y='260' width='210' height='12' rx='6' fill='%232f6f4e' opacity='.4'/%3E%3Crect x='1120' y='305' width='280' height='86' rx='12' fill='%23f3f7f1'/%3E%3Crect x='1152' y='337' width='52' height='26' rx='5' fill='%23f2b84b'/%3E%3Crect x='1230' y='331' width='130' height='12' rx='6' fill='%2314213d' opacity='.18'/%3E%3Crect x='1230' y='356' width='98' height='10' rx='5' fill='%2314213d' opacity='.12'/%3E%3Crect x='1120' y='430' width='280' height='14' rx='7' fill='%2314213d' opacity='.12'/%3E%3Crect x='1120' y='468' width='235' height='14' rx='7' fill='%2314213d' opacity='.12'/%3E%3Crect x='1120' y='506' width='260' height='14' rx='7' fill='%2314213d' opacity='.12'/%3E%3Cpath d='M1120 660 C1185 625 1220 680 1278 640 S1368 610 1400 638' fill='none' stroke='%232f6f4e' stroke-width='12' stroke-linecap='round'/%3E%3Ccircle cx='305' cy='250' r='110' fill='%23f2b84b' opacity='.5'/%3E%3Crect x='150' y='640' width='430' height='240' rx='22' fill='%23ffffff' opacity='.65'/%3E%3Cpath d='M200 800 L270 735 L330 770 L420 675 L520 735' fill='none' stroke='%232f6f4e' stroke-width='16' stroke-linecap='round' stroke-linejoin='round' opacity='.65'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-inner,
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    .hero-content {
+      max-width: 670px;
+      padding: 72px 0 84px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-dark);
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--sun);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      color: var(--ink);
+      font-size: clamp(2.55rem, 6vw, 5.15rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+      max-width: 780px;
+    }
+
+    .hero-lede {
+      max-width: 620px;
+      margin-bottom: 30px;
+      color: var(--ink-2);
+      font-size: clamp(1.04rem, 1.8vw, 1.25rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 710px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(217, 226, 220, 0.88);
+      border-radius: var(--radius);
+      box-shadow: 0 16px 35px rgba(20, 33, 61, 0.08);
+      overflow: hidden;
+    }
+
+    .trust-item {
+      padding: 16px;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.04rem;
+      line-height: 1.2;
+    }
+
+    .trust-item span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-top {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.55fr);
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .section-top h2,
+    .centered h2 {
+      color: var(--ink);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      margin-bottom: 12px;
+      letter-spacing: 0;
+    }
+
+    .section-top p,
+    .centered p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    .services {
+      background: var(--white);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 24px;
+      min-height: 260px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--sky);
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+
+    .service-card:nth-child(2) .icon-box {
+      background: #f7e9ce;
+      color: #8a5b13;
+    }
+
+    .service-card:nth-child(3) .icon-box {
+      background: #e2f0e6;
+      color: var(--green);
+    }
+
+    .service-card:nth-child(4) .icon-box {
+      background: #f7e1de;
+      color: var(--coral);
+    }
+
+    .service-card h3 {
+      color: var(--ink);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+    }
+
+    .service-card ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      color: var(--ink-2);
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .service-card li {
+      padding: 8px 0;
+      border-top: 1px solid rgba(217, 226, 220, 0.8);
+    }
+
+    .proof {
+      background: var(--mist);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .ledger-visual {
+      min-height: 480px;
+      padding: 26px;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--white);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ledger-visual::after {
+      content: "";
+      position: absolute;
+      inset: auto -70px -90px auto;
+      width: 260px;
+      height: 260px;
+      background: var(--sun);
+      opacity: 0.18;
+      border-radius: 50%;
+    }
+
+    .dashboard-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .dash-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 78px 1fr 58px;
+      align-items: center;
+      gap: 12px;
+      margin: 15px 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.88rem;
+    }
+
+    .bar-track {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.13);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--sun);
+    }
+
+    .bar-fill.green {
+      background: #77c08a;
+    }
+
+    .bar-fill.blue {
+      background: #7fb1de;
+    }
+
+    .ledger-note {
+      position: relative;
+      z-index: 1;
+      max-width: 360px;
+    }
+
+    .ledger-note strong {
+      display: block;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .ledger-note span {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .advantage-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .advantage {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .advantage h3 {
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 1.08rem;
+    }
+
+    .advantage p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .audiences {
+      background: var(--paper);
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .audience-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--white);
+      overflow: hidden;
+      box-shadow: 0 12px 26px rgba(20, 33, 61, 0.06);
+    }
+
+    .audience-art {
+      height: 160px;
+      background:
+        linear-gradient(135deg, rgba(47, 111, 78, 0.92), rgba(47, 93, 140, 0.82)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.28) 0 2px, transparent 2px 28px);
+      position: relative;
+    }
+
+    .audience-card:nth-child(2) .audience-art {
+      background:
+        linear-gradient(135deg, rgba(217, 107, 95, 0.9), rgba(242, 184, 75, 0.78)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.28) 0 2px, transparent 2px 28px);
+    }
+
+    .audience-card:nth-child(3) .audience-art {
+      background:
+        linear-gradient(135deg, rgba(47, 93, 140, 0.94), rgba(20, 33, 61, 0.82)),
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.45), transparent 22%);
+    }
+
+    .audience-art::after {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 2px solid rgba(255, 255, 255, 0.62);
+      border-radius: 8px;
+    }
+
+    .audience-body {
+      padding: 24px;
+    }
+
+    .audience-body h3 {
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .audience-body p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .audience-body a {
+      color: var(--green-dark);
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .process {
+      background: var(--white);
+    }
+
+    .centered {
+      max-width: 700px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .process-step {
+      background: var(--paper);
+      padding: 26px 22px;
+      min-height: 230px;
+    }
+
+    .step-number {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+      font-weight: 900;
+    }
+
+    .process-step h3 {
+      color: var(--ink);
+      margin-bottom: 8px;
+      font-size: 1.04rem;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      margin-bottom: 0;
+      font-size: 0.94rem;
+    }
+
+    .contact {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .contact .section-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(320px, 0.8fr);
+      gap: 42px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .contact p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 1.04rem;
+    }
+
+    .contact-list {
+      margin: 32px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .contact-list strong {
+      color: var(--white);
+    }
+
+    .form-card {
+      background: var(--paper);
+      color: var(--text);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--white);
+      color: var(--text);
+      padding: 12px 13px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .wide {
+      grid-column: 1 / -1;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--green);
+      outline: 3px solid rgba(47, 111, 78, 0.16);
+    }
+
+    .form-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .site-footer {
+      background: #0e172a;
+      color: rgba(255, 255, 255, 0.72);
+      padding: 36px 22px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--white);
+      outline: none;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+
+      .nav-links,
+      .nav-actions {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        padding-left: 0;
+      }
+
+      .hero {
+        min-height: auto;
+        background:
+          linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(255, 253, 248, 0.72)),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='900' viewBox='0 0 1000 900'%3E%3Crect width='1000' height='900' fill='%23dcebf5'/%3E%3Crect x='520' y='96' width='330' height='545' rx='18' fill='%23ffffff' opacity='.9'/%3E%3Crect x='570' y='162' width='215' height='18' rx='9' fill='%2314213d' opacity='.18'/%3E%3Crect x='570' y='220' width='230' height='86' rx='12' fill='%23f3f7f1'/%3E%3Cpath d='M570 520 C625 480 665 535 715 500 S795 470 830 510' fill='none' stroke='%232f6f4e' stroke-width='12' stroke-linecap='round'/%3E%3Ccircle cx='180' cy='170' r='100' fill='%23f2b84b' opacity='.45'/%3E%3C/svg%3E");
+        background-size: cover;
+      }
+
+      .section-top,
+      .proof-grid,
+      .contact .section-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .brand {
+        min-width: 0;
+      }
+
+      .nav-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .phone-link,
+      .nav-actions .button {
+        width: 100%;
+      }
+
+      .hero-content {
+        padding-top: 54px;
+      }
+
+      .trust-row,
+      .service-grid,
+      .process-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .ledger-visual {
+        min-height: 420px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="NKDJ Accounting home">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-labelledby="logo-title">
+          <title id="logo-title">NKDJ Accounting logo</title>
+          <rect width="64" height="64" rx="12" fill="#14213d"></rect>
+          <path d="M14 44V20h8l12 16V20h8v24h-8L22 28v16h-8Z" fill="#fffdf8"></path>
+          <path d="M42 42c7-2 10-7 10-15v-7h-8v7c0 4-1 6-4 8l2 7Z" fill="#f2b84b"></path>
+          <path d="M12 50h40" stroke="#77c08a" stroke-width="4" stroke-linecap="round"></path>
+        </svg>
+        <span>
+          <span class="brand-name">NKDJ Accounting</span>
+          <span class="brand-note">Books. Taxes. Growth.</span>
+        </span>
+      </a>
+
+      <div class="nav-links" aria-label="Page sections">
+        <a href="#services">Services</a>
+        <a href="#why">Why NKDJ</a>
+        <a href="#clients">Who we help</a>
+        <a href="#process">Process</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="phone-link" href="tel:+19542749908">(954) 274-9908</a>
+        <a class="button" href="#contact">Book a consult</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <span class="eyebrow">Accounting built for momentum</span>
+          <h1>Clean books, confident taxes, smarter growth decisions.</h1>
+          <p class="hero-lede">NKDJ Accounting helps new and growing businesses, busy professionals, and families turn financial chaos into a clear plan. We handle the numbers so you can move faster with fewer surprises.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Start with a free consultation</a>
+            <a class="button secondary" href="#services">Explore services</a>
+          </div>
+          <div class="trust-row" aria-label="NKDJ highlights">
+            <div class="trust-item">
+              <strong>Monthly clarity</strong>
+              <span>Books, reports, and next steps</span>
+            </div>
+            <div class="trust-item">
+              <strong>Tax-ready records</strong>
+              <span>Organized before deadlines arrive</span>
+            </div>
+            <div class="trust-item">
+              <strong>Founder-friendly</strong>
+              <span>Support that grows with you</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-inner">
+        <div class="section-top">
+          <div>
+            <span class="eyebrow">What we do</span>
+            <h2>Accounting services that make growth easier to manage.</h2>
+          </div>
+          <p>Start with the support you need today, then add deeper advisory as your revenue, team, and responsibilities expand.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div>
+              <div class="icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 4h14v16H5z" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Bookkeeping</h3>
+              <p>Reliable monthly books with categorized transactions, reconciliations, and reporting you can actually use.</p>
+            </div>
+            <ul>
+              <li>Bank reconciliations</li>
+              <li>Monthly statements</li>
+              <li>Cleanup projects</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 3h10v18H7z" stroke="currentColor" stroke-width="2"/><path d="M10 7h4M10 11h4M10 15h1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Tax preparation</h3>
+              <p>Personal and business tax preparation with proactive organization before the filing rush.</p>
+            </div>
+            <ul>
+              <li>Individual returns</li>
+              <li>Business returns</li>
+              <li>Year-end planning</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m8 15 3-4 3 2 4-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Business advisory</h3>
+              <p>Practical guidance for pricing, cash flow, entity structure, quarterly estimates, and growth decisions.</p>
+            </div>
+            <ul>
+              <li>Cash flow reviews</li>
+              <li>Budget planning</li>
+              <li>Quarterly check-ins</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M16 11c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4ZM8 13c2.2 0 4-1.8 4-4S10.2 5 8 5 4 6.8 4 9s1.8 4 4 4Z" stroke="currentColor" stroke-width="2"/><path d="M2 21c.8-3.4 3-5 6-5s5.2 1.6 6 5M11 21c.7-2.6 2.4-4 5-4 2.8 0 4.7 1.4 5.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Payroll support</h3>
+              <p>Set up payroll rhythms that keep your people paid, your records clean, and your compliance easier.</p>
+            </div>
+            <ul>
+              <li>Payroll setup</li>
+              <li>Contractor tracking</li>
+              <li>Filing reminders</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" id="why">
+      <div class="section-inner">
+        <div class="proof-grid">
+          <div class="ledger-visual" aria-label="Financial dashboard illustration">
+            <div class="dashboard-card">
+              <div class="dash-head">
+                <span>Monthly snapshot</span>
+                <span>NKDJ client view</span>
+              </div>
+              <div class="bar-row">
+                <span>Revenue</span>
+                <span class="bar-track"><span class="bar-fill green" style="width: 86%"></span></span>
+                <span>86%</span>
+              </div>
+              <div class="bar-row">
+                <span>Payroll</span>
+                <span class="bar-track"><span class="bar-fill blue" style="width: 54%"></span></span>
+                <span>54%</span>
+              </div>
+              <div class="bar-row">
+                <span>Taxes</span>
+                <span class="bar-track"><span class="bar-fill" style="width: 38%"></span></span>
+                <span>38%</span>
+              </div>
+              <div class="bar-row">
+                <span>Profit</span>
+                <span class="bar-track"><span class="bar-fill green" style="width: 68%"></span></span>
+                <span>68%</span>
+              </div>
+            </div>
+            <div class="ledger-note">
+              <strong>Know your numbers before they become urgent.</strong>
+              <span>We turn bookkeeping and tax work into a steady operating rhythm, so your next move is based on fresh financial information.</span>
+            </div>
+          </div>
+
+          <div>
+            <span class="eyebrow">Why NKDJ</span>
+            <h2>Built for businesses that need traction, not accounting theater.</h2>
+            <div class="advantage-list">
+              <article class="advantage">
+                <h3>Plain-language financial guidance</h3>
+                <p>You get clear answers, not accounting jargon. We explain what changed, what matters, and what to do next.</p>
+              </article>
+              <article class="advantage">
+                <h3>A growth-first service model</h3>
+                <p>Your accounting should support faster decisions: hiring, pricing, tax estimates, financing, and expansion.</p>
+              </article>
+              <article class="advantage">
+                <h3>Modern workflow, human attention</h3>
+                <p>Secure document collection, organized reminders, and a real relationship with a team that learns your goals.</p>
+              </article>
+              <article class="advantage">
+                <h3>Credible without overclaiming</h3>
+                <p>As a growing firm, NKDJ earns trust through responsiveness, transparency, and work that makes your life easier.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audiences" id="clients">
+      <div class="section-inner">
+        <div class="section-top">
+          <div>
+            <span class="eyebrow">Who we help</span>
+            <h2>Support for owners, professionals, and families with bigger goals.</h2>
+          </div>
+          <p>Choose the path that sounds closest to you. We will shape the first consultation around your current pressure points.</p>
+        </div>
+
+        <div class="audience-grid">
+          <article class="audience-card">
+            <div class="audience-art" aria-hidden="true"></div>
+            <div class="audience-body">
+              <h3>Small businesses</h3>
+              <p>For service firms, local businesses, ecommerce sellers, and growing teams that need dependable books and tax structure.</p>
+              <a href="#contact">Get business help</a>
+            </div>
+          </article>
+          <article class="audience-card">
+            <div class="audience-art" aria-hidden="true"></div>
+            <div class="audience-body">
+              <h3>Founders and creators</h3>
+              <p>For people turning income into a company and needing setup, quarterly tax planning, and cleaner money systems.</p>
+              <a href="#contact">Plan my setup</a>
+            </div>
+          </article>
+          <article class="audience-card">
+            <div class="audience-art" aria-hidden="true"></div>
+            <div class="audience-body">
+              <h3>Individuals and families</h3>
+              <p>For people who want calm tax preparation, better records, and guidance before major financial decisions.</p>
+              <a href="#contact">Prepare my taxes</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="section-inner">
+        <div class="centered">
+          <span class="eyebrow">How it works</span>
+          <h2>A simple first month with no mystery.</h2>
+          <p>We make onboarding direct, organized, and focused on the outcomes you need most.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <span class="step-number">1</span>
+            <h3>Discovery call</h3>
+            <p>We learn your goals, deadlines, business model, and current accounting setup.</p>
+          </article>
+          <article class="process-step">
+            <span class="step-number">2</span>
+            <h3>Records review</h3>
+            <p>You share access or documents securely so we can spot gaps and priorities.</p>
+          </article>
+          <article class="process-step">
+            <span class="step-number">3</span>
+            <h3>Service roadmap</h3>
+            <p>We recommend the right level of monthly, tax, or advisory support for your situation.</p>
+          </article>
+          <article class="process-step">
+            <span class="step-number">4</span>
+            <h3>Ongoing rhythm</h3>
+            <p>You get regular updates, deadlines, reports, and practical guidance as you grow.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <div>
+          <span class="eyebrow">Book a consultation</span>
+          <h2>Tell us what you are building. We will help organize the numbers behind it.</h2>
+          <p>Use this form as a quick intake draft. When you connect it to your preferred form tool or email service, it can become your main lead capture path.</p>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> hello@nkdjaccounting.com</li>
+            <li><strong>Phone:</strong> (000) 000-0000</li>
+            <li><strong>Hours:</strong> Monday-Friday, 9:00 AM-5:00 PM</li>
+          </ul>
+        </div>
+
+        <form class="form-card" action="#" method="post">
+          <div class="form-grid">
+            <label>
+              Name
+              <input name="name" autocomplete="name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="phone" autocomplete="tel">
+            </label>
+            <label>
+              I need help with
+              <select name="service" required>
+                <option value="">Select a service</option>
+                <option>Bookkeeping</option>
+                <option>Tax preparation</option>
+                <option>Business advisory</option>
+                <option>Payroll support</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+            <label class="wide">
+              What is going on?
+              <textarea name="message" placeholder="Example: I started an LLC this year, need bookkeeping cleanup, and want to understand quarterly taxes."></textarea>
+            </label>
+          </div>
+          <button class="button" type="submit">Request consultation</button>
+          <p class="form-note">We respond within one business day. Please do not include Social Security numbers or tax IDs in this form.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>NKDJ Accounting</strong>
+        <div>Tax, bookkeeping, and advisory support for growing lives and businesses.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why NKDJ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
